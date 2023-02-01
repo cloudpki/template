@@ -1,0 +1,11 @@
+ame: Call Authorize Commit Signing
+
+on: [push]
+
+jobs:
+  call-bi-workflow-passing-repository-name:
+    uses: cloudpki/bipl/.github/workflows/auth-commit-sig.yml@main
+    with:
+      repository-name: ${{ github.repository }}
+    secrets: inherit
+
